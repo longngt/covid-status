@@ -1,10 +1,9 @@
-import styles from "./RegionPage.module.scss";
 import ApifyClient from "apify-client";
-import { Layout } from "../../components";
 import { useState } from "react";
+import { Layout } from "../../components";
+import styles from "./RegionPage.module.scss";
 
 export default function RegionPage({ regionData }) {
-  console.log(regionData[0]);
   const [detail, setDetail] = useState(regionData[0]);
   return (
     <Layout heading="Region Details">
