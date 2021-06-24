@@ -1,6 +1,7 @@
 import { Layout, Region } from "../components";
 import ApifyClient from "apify-client";
 import styles from "../styles/Regions.module.scss";
+import Link from "next/link";
 
 export default function Regions({ data }) {
   return (
@@ -33,7 +34,20 @@ export default function Regions({ data }) {
           <div className={styles.tableHeading}>Total Infected</div>
         </div>
         {data.regionData.map((region) => {
-          return <Region props={region} key={region.region}></Region>;
+          console.log(region.region.toLowerCase().split(" ").join(""));
+          return (
+            <Link
+              href={`/region/${region.region
+                .toLowerCase()
+                .split(" ")
+                .join("")}`}
+              key={region.region}
+            >
+              <a>
+                <Region props={region}></Region>
+              </a>
+            </Link>
+          );
         })}
       </div>
     </Layout>
