@@ -1,0 +1,51 @@
+$font-family: "Open Sans", sans-serif;
+$background-main: rgb(246, 245, 245);
+$header-color: rgb(43, 46, 74);
+$main-text: rgb(112, 112, 112);
+$hover-color: rgb(255, 255, 255);
+$active-color: rgb(242, 186, 61);
+$death-color: rgb(144, 55, 73);
+$recover-color: rgb(0, 145, 74);
+$total-color: rgb(232, 69, 69);
+$box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+@mixin flexCenter($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+.inputWrapper {
+  @include flexCenter(row);
+  .inputContent {
+    background-color: $hover-color;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    width: 30%;
+    border-radius: 30px;
+    // box-shadow: $box-shadow;
+    .searchIcon {
+      width: 20px;
+      color: $main-text;
+    }
+    input[type="text"] {
+      border: none;
+      outline: none;
+      margin-left: 10px;
+      width: 100%;
+    }
+  }
+}
+.tableHeadingWrapper {
+  display: flex;
+  align-items: center;
+  margin: 40px 0 20px 0;
+  .tableHeading {
+    flex: 1;
+    text-align: center;
+    color: $main-text;
+    font-weight: 700;
+  }
+}

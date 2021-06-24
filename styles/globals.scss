@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+$font-family: "Open Sans", sans-serif;
+$background-main: rgb(246, 245, 245);
+$header-color: rgb(43, 46, 74);
+$main-text: rgb(112, 112, 112);
+$hover-color: rgb(255, 255, 255);
+$active-color: rgb(242, 186, 61);
+$death-color: rgb(144, 55, 73);
+$recover-color: rgb(0, 145, 74);
+$total-color: rgb(232, 69, 69);
+$box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: $font-family;
+  background-color: $background-main;
+  position: relative;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  font: inherit;
+  user-select: none;
+}
