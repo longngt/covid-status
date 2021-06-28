@@ -1,6 +1,6 @@
 import { Layout, Region } from "../components";
 import ApifyClient from "apify-client";
-import styles from "../styles/Regions.module.scss";
+import styles from "../../styles/Regions.module.scss";
 import Link from "next/link";
 
 export default function Regions({ data }) {

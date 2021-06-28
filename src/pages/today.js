@@ -1,7 +1,7 @@
 import ApifyClient from "apify-client";
 import dateFormat from "dateformat";
 import { Layout } from "../components";
-import styles from "../styles/Today.module.scss";
+import styles from "../../styles/Today.module.scss";
 
 export default function Today({ data }) {
   return (

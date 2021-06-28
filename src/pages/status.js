@@ -1,12 +1,15 @@
 import ApifyClient from "apify-client";
 import dateFormat from "dateformat";
 import { Layout } from "../components";
-import styles from "../styles/Status.module.scss";
+import styles from "../../styles/Status.module.scss";
+import { useSelector } from "react-redux";
 
-export default function Status({ data }) {
+export default function Status() {
+  const status = useSelector((state) => state.status);
+  console.log("status: ", status);
   return (
     <Layout heading="Status">
-      <div className={styles.statusWrapper}>
+      {/* <div className={styles.statusWrapper}>
         <div className={styles.box}>
           <p className={styles.title}>Active Cases</p>
           <p className={styles.active}>{data.activeCases}</p>
@@ -34,32 +37,7 @@ export default function Status({ data }) {
             return convertedDate;
           })()}
         </p>
-      </div>
+      </div> */}
     </Layout>
   );
 }
-
-export const getStaticProps = async () => {
-  // Initialize the ApifyClient with API token
-  const client = new ApifyClient({
-    token: "aEcdP2m65wz6uwLtEqKMeErWP",
-  });
-
-  const input = {
-    email: "zuzka@apify.com",
-  };
-
-  // Run the actor and wait for it to finish
-  const run = await client.actor("zuzka/covid-in").call(input);
-
-  // Fetch and print actor results from the run's dataset (if any)
-
-  const { items } = await client.dataset(run.defaultDatasetId).listItems();
-  const data = items[0];
-
-  return {
-    props: {
-      data,
-    },
-  };
-};
